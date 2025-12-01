@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building project...'
+                echo 'Building project for sure...'
                 // Your build command here
                 sh 'mvn clean install'  // Replace with your build command
             }
