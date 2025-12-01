@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building project...'
                 // Your build command here
-                sh 'make build'  // Replace with your build command
+                sh 'mvn clean install'  // Replace with your build command
             }
         }
     }
@@ -14,14 +14,14 @@ pipeline {
     post {
         success {
             mail(
-                to: 'team@example.com',
+                to: 'saidazizz132@gmail.com',
                 subject: "SUCCESS: ${env.JOB_NAME} Build #${env.BUILD_NUMBER}",
                 body: "Build succeeded!\nView details: ${env.BUILD_URL}"
             )
         }
         failure {
             mail(
-                to: 'team@example.com',
+                to: 'saidazizz132@gmail.com',
                 subject: "FAILURE: ${env.JOB_NAME} Build #${env.BUILD_NUMBER}",
                 body: "Build failed!\nView details: ${env.BUILD_URL}"
             )
