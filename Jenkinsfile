@@ -2,11 +2,16 @@ pipeline {
     agent any
     
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
         stage('Build') {
             steps {
-                echo 'Building project for sure...'
-                // Your build command here
-                sh 'mvn clean install'  // Replace with your build command
+                echo 'Building project for sure ...'
+                sh 'mvn clean install'  // Replace with your actual build command
             }
         }
     }
